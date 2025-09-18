@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Server Details — VORTEX</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { background:#050512; color:#fff; font-family:Inter, sans-serif }
+    .banner { height:340px; background-size:cover; background-position:center; border-bottom:1px solid rgba(255,255,255,0.04) }
+    .server-wrapper { max-width:1100px; margin:-80px auto 60px; padding:1.5rem; border-radius:14px; background:rgba(10,10,26,0.65); border:1px solid rgba(0,212,255,0.06) }
+    .server-icon { width:140px; height:140px; border-radius:18px; overflow:hidden; border:2px solid rgba(255,255,255,0.06); background:#0f0f23; display:flex; align-items:center; justify-content:center; }
+    .server-meta { display:flex; gap:1rem; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .meta-left { display:flex; gap:1rem; align-items:center; }
+    .meta-right { text-align:right; }
+    .ip-pill { background:rgba(255,255,255,0.04); padding:8px 12px; border-radius:999px; font-family:monospace; display:inline-block; }
+    .desc { margin-top:1rem; color:rgba(255,255,255,0.8) }
+    .btn-join { background:linear-gradient(90deg,#00D4FF,#7C3AED); color:#051 over; padding:10px 16px; border-radius:10px }
+    .copy-btn { background:transparent; border:1px solid rgba(255,255,255,0.06); padding:8px 12px; border-radius:10px; color:#fff }
+    @media (max-width:768px) { .banner { height:200px } .server-wrapper { margin-top:-40px; padding:1rem } .server-icon { width:96px; height:96px } }
+  </style>
+</head>
+<body>
+  <div id="banner" class="banner" style="background-image: url('https://placehold.co/1200x400/0F0F23/00D4FF?text=NEXUS+BANNER')"></div>
+
+  <main class="server-wrapper">
+    <div class="server-meta">
+      <div class="meta-left">
+        <div class="server-icon" id="server-icon">
+          <img id="icon-img" src="https://placehold.co/128x128/0F0F23/00D4FF?text=NS" alt="server icon" style="width:100%;height:100%;object-fit:cover" />
+        </div>
+        <div>
+          <h2 id="server-name" class="text-3xl font-bold">Nexus Server</h2>
+          <div class="mt-1">
+            <span class="ip-pill" id="server-ip">nexus.server.ip</span>
+            <button id="copyBtn" class="copy-btn ml-3">COPY</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="meta-right">
+        <div class="text-right">
+          <div class="text-sm small">Server Status</div>
+          <div class="text-xl font-semibold text-green-400">ONLINE</div>
+        </div>
+
+        <div class="mt-4">
+          <a id="joinBtn" class="holo-button-primary inline-flex items-center px-4 py-2 rounded-lg" href="#">
+            <i class="ri-rocket-line mr-2"></i> JOIN
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="desc mt-6" id="server-desc">
+      NEXT-GENERATION FIVEM EXPERIENCE
+    </div>
+  </main>
+
+  <script>
+    // خواندن پارامترها از URL:
+    function getParams() {
+      const q = new URLSearchParams(location.search);
+      return {
+        ip: q.get('ip') || '100.76.25.95',
+        name: q.get('name') || 'VORTEX COMMUNITY',
+        desc: q.get('desc') || 'NEXT-GENERATION IRFive EXPERIENCE',
+        icon: q.get('icon') || 'https://uploadkon.ir/uploads/107f18_25myLogo.png',
+        banner: q.get('banner') || 'https://uploadkon.ir/uploads/404318_25VorteX.gif'
+      };
+    }
+
+    const s = getParams();
+    // پر کردن DOM
+    document.getElementById('server-ip').textContent = s.ip;
+    document.getElementById('server-name').textContent = s.name;
+    document.getElementById('server-desc').textContent = s.desc;
+    document.getElementById('icon-img').src = s.icon;
+    document.getElementById('banner').style.backgroundImage = `url('${s.banner}')`;
+
+    // دکمه کپی آی‌پی
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(s.ip);
+        document.getElementById('copyBtn').textContent = 'COPIED ✓';
+        setTimeout(()=> document.getElementById('copyBtn').textContent = 'COPY', 2000);
+      } catch(e) {
+        alert('Copy failed — please copy manually: ' + s.ip);
+      }
+    });
+
+    // دکمه Join — میتونی اینجا logic دلخواهت بذاری (مثلاً باز کردن FiveM یا لینک مخصوص)
+    document.getElementById('joinBtn').addEventListener('click', (e) => {
+      // پیش‌فرض: فقط یک افکت و سپس کپی آی‌پی و پیام
+      e.preventDefault();
+      navigator.clipboard.writeText(s.ip).catch(()=>{});
+      document.getElementById('joinBtn').textContent = 'CONNECTING ...';
+      setTimeout(() => {
+        document.getElementById('joinBtn').textContent = 'JOIN';
+        alert('The IP has been copied. Now open IRFive and enter the IP:' + s.ip);
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
