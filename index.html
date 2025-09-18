@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FiveM Server Template - Holographic Interface</title>
+    <title>VorteX Community | Next-Generation IRFive Experience</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- GSAP for advanced animations -->
@@ -96,26 +96,6 @@
     <!-- Scanning Line Effect -->
     <div class="scan-line fixed top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-holo-primary to-transparent opacity-30 animate-scan z-20"></div>
 
-    <!-- Loading Screen -->
-    <div class="loading-screen fixed inset-0 bg-holo-darker z-50 flex items-center justify-center">
-        <div class="loading-content text-center">
-            <div class="holo-logo mb-8 relative">
-                <div class="w-32 h-32 mx-auto relative">
-                    <div class="absolute inset-0 border-2 border-holo-primary rounded-full animate-spin"></div>
-                    <div class="absolute inset-2 border-2 border-holo-secondary rounded-full animate-spin" style="animation-direction: reverse;"></div>
-                    <div class="absolute inset-4 border-2 border-holo-accent rounded-full animate-spin"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i class="ri-cpu-line text-4xl text-holo-primary"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="text-2xl font-mono mb-4 text-holo-primary">INITIALIZING HOLOGRAPHIC INTERFACE</div>
-            <div class="loading-bar w-64 h-2 bg-holo-light mx-auto relative overflow-hidden rounded-full">
-                <div class="loading-progress absolute top-0 left-0 h-full bg-gradient-to-r from-holo-primary to-holo-secondary transform -translate-x-full rounded-full"></div>
-            </div>
-            <div class="mt-4 text-sm text-white/50 font-mono">ESTABLISHING NEURAL LINK...</div>
-        </div>
-    </div>
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full z-40 transition-all duration-500" data-nav>
@@ -124,7 +104,7 @@
                 <div class="flex items-center justify-between">
                     <a href="#" class="text-2xl font-bold relative group">
                         <span class="relative z-10 bg-gradient-to-r from-holo-primary to-holo-secondary bg-clip-text text-transparent">
-                            NEXUS SERVER
+                            VorteX Community
                         </span>
                         <div class="absolute inset-0 bg-gradient-to-r from-holo-primary/20 to-holo-secondary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </a>
@@ -151,7 +131,9 @@
                             <span class="relative z-10">Rules</span>
                             <div class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-holo-primary to-holo-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform"></div>
                         </a>
-                        <a href="#join" class="holo-button px-6 py-2 bg-gradient-to-r from-holo-primary to-holo-secondary text-holo-darker font-semibold rounded-lg hover:shadow-lg hover:shadow-holo-primary/25 transition-all">
+                        <!-- CONNECT BUTTON (changed to redirect to connect.html with server params) -->
+                        <a href="connect.html"
+                           class="holo-button px-6 py-2 bg-gradient-to-r from-holo-primary to-holo-secondary text-holo-darker font-semibold rounded-lg hover:shadow-lg hover:shadow-holo-primary/25 transition-all">
                             Connect
                         </a>
                     </div>
@@ -173,7 +155,8 @@
                     <a href="#features" class="block text-4xl font-bold hover:text-holo-primary transition-colors">Features</a>
                     <a href="#team" class="block text-4xl font-bold hover:text-holo-primary transition-colors">Team</a>
                     <a href="#rules" class="block text-4xl font-bold hover:text-holo-primary transition-colors">Rules</a>
-                    <a href="#join" class="block text-4xl font-bold hover:text-holo-primary transition-colors">Connect</a>
+                    <!-- MOBILE CONNECT LINK (changed) -->
+                    <a href="connect.html" class="block text-4xl font-bold hover:text-holo-primary transition-colors">Connect</a>
                 </div>
             </div>
         </div>
@@ -195,42 +178,30 @@
                     <div class="mb-8 relative">
                         <h1 class="text-6xl md:text-8xl font-black mb-4 relative">
                             <span class="holo-text bg-gradient-to-r from-holo-primary via-white to-holo-secondary bg-clip-text text-transparent">
-                                NEXUS SERVER
+                                VorteX Community
                             </span>
                             <div class="absolute inset-0 bg-gradient-to-r from-holo-primary/20 to-holo-secondary/20 blur-2xl"></div>
                         </h1>
                         <div class="text-xl md:text-2xl text-white/70 font-mono">
-                            <span class="typing-text">NEXT-GENERATION FIVEM EXPERIENCE</span>
+                            <span class="typing-text">NEXT-GENERATION IRFive EXPERIENCE</span>
                         </div>
                     </div>
 
                     <!-- Holographic Stats -->
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-                        <div class="holo-card p-6 bg-holo-glass backdrop-blur-md border border-holo-border rounded-xl relative group">
-                            <div class="absolute inset-0 bg-gradient-to-br from-holo-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
-                            <div class="relative z-10">
-                                <div class="text-3xl font-bold text-holo-primary mb-2 counter" data-target="1337">0</div>
-                                <div class="text-sm text-white/60 font-mono uppercase tracking-wider">Active Players</div>
-                            </div>
-                        </div>
+                        <br>
+                        <br>
                         <div class="holo-card p-6 bg-holo-glass backdrop-blur-md border border-holo-border rounded-xl relative group">
                             <div class="absolute inset-0 bg-gradient-to-br from-holo-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
                             <div class="relative z-10">
-                                <div class="text-3xl font-bold text-holo-secondary mb-2 counter" data-target="99">0</div>
+                                <div class="text-3xl font-bold text-holo-secondary mb-2 counter" data-target="83">0</div>
                                 <div class="text-sm text-white/60 font-mono uppercase tracking-wider">Custom Scripts</div>
-                            </div>
-                        </div>
-                        <div class="holo-card p-6 bg-holo-glass backdrop-blur-md border border-holo-border rounded-xl relative group">
-                            <div class="absolute inset-0 bg-gradient-to-br from-holo-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
-                            <div class="relative z-10">
-                                <div class="text-3xl font-bold text-holo-accent mb-2">24/7</div>
-                                <div class="text-sm text-white/60 font-mono uppercase tracking-wider">Uptime</div>
                             </div>
                         </div>
                         <div class="holo-card p-6 bg-holo-glass backdrop-blur-md border border-holo-border rounded-xl relative group">
                             <div class="absolute inset-0 bg-gradient-to-br from-holo-success/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
                             <div class="relative z-10">
-                                <div class="text-3xl font-bold text-holo-success mb-2 counter" data-target="128">0</div>
+                                <div class="text-3xl font-bold text-holo-success mb-2 counter" data-target="48">0</div>
                                 <div class="text-sm text-white/60 font-mono uppercase tracking-wider">Max Slots</div>
                             </div>
                         </div>
@@ -238,7 +209,9 @@
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-wrap justify-center gap-6">
-                        <a href="#join" class="holo-button-primary group relative overflow-hidden px-8 py-4 bg-gradient-to-r from-holo-primary to-holo-secondary text-holo-darker font-bold rounded-xl hover:shadow-2xl hover:shadow-holo-primary/25 transition-all">
+                        <!-- HERO CONNECT CTA (changed to redirect to connect.html with server params) -->
+                        <a href="connect.html"
+                           class="holo-button-primary group relative overflow-hidden px-8 py-4 bg-gradient-to-r from-holo-primary to-holo-secondary text-holo-darker font-bold rounded-xl hover:shadow-2xl hover:shadow-holo-primary/25 transition-all">
                             <span class="relative z-10 flex items-center">
                                 <i class="ri-rocket-line mr-2"></i>
                                 CONNECT NOW
@@ -271,7 +244,7 @@
                     <div class="text-center mb-16">
                         <h2 class="text-5xl md:text-6xl font-black mb-6">
                             <span class="bg-gradient-to-r from-holo-primary to-holo-secondary bg-clip-text text-transparent">
-                                ABOUT NEXUS
+                                ABOUT VORTEX
                             </span>
                         </h2>
                         <p class="text-xl text-white/70 max-w-3xl mx-auto">
@@ -312,7 +285,7 @@
                                 <div class="w-16 h-16 mb-6 bg-gradient-to-br from-holo-accent to-holo-success rounded-xl flex items-center justify-center">
                                     <i class="ri-shield-check-line text-2xl text-white"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 text-holo-accent">Quantum Security</h3>
+                                <h3 class="text-2xl font-bold mb-4 text-holo-accent">VORTEX Security</h3>
                                 <p class="text-white/70">
                                     State-of-the-art security protocols ensure a safe, fair, and cheat-free environment for all players.
                                 </p>
@@ -330,11 +303,11 @@
                     <div class="text-center mb-16">
                         <h2 class="text-5xl md:text-6xl font-black mb-6">
                             <span class="bg-gradient-to-r from-holo-primary to-holo-secondary bg-clip-text text-transparent">
-                                NEURAL FEATURES
+                                VORTEX FEATURES
                             </span>
                         </h2>
                         <p class="text-xl text-white/70 max-w-3xl mx-auto">
-                            Discover the revolutionary features that make Nexus Server the most advanced FiveM experience available.
+                            Discover the revolutionary features that make VorteX Community the most advanced FiveM experience available.
                         </p>
                     </div>
 
@@ -342,12 +315,12 @@
                         <!-- Feature 1 -->
                         <div class="holo-feature-card relative group overflow-hidden rounded-xl">
                             <div class="aspect-video relative overflow-hidden">
-                                <img src="https://placehold.co/800x450/0F0F23/00D4FF?text=NEURAL+ECONOMY" alt="Neural Economy" class="w-full h-full object-cover">
+                                <img src="https://placehold.co/800x450/0F0F23/00D4FF?text=VORTEX+ECONOMY" alt="VORTEX Economy" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-holo-darker via-transparent to-transparent"></div>
                                 <div class="absolute inset-0 bg-holo-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                             <div class="absolute bottom-0 left-0 right-0 p-6">
-                                <h3 class="text-3xl font-bold mb-2 text-holo-primary">Neural Economy</h3>
+                                <h3 class="text-3xl font-bold mb-2 text-holo-primary">VORTEX Economy</h3>
                                 <p class="text-white/80">AI-driven economic systems that adapt and evolve based on player behavior and market dynamics.</p>
                             </div>
                         </div>
@@ -355,12 +328,12 @@
                         <!-- Feature 2 -->
                         <div class="holo-feature-card relative group overflow-hidden rounded-xl">
                             <div class="aspect-video relative overflow-hidden">
-                                <img src="https://placehold.co/800x450/0F0F23/7C3AED?text=QUANTUM+JOBS" alt="Quantum Jobs" class="w-full h-full object-cover">
+                                <img src="https://placehold.co/800x450/0F0F23/7C3AED?text=VORTEX+JOBS" alt="VORTEX Jobs" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-holo-darker via-transparent to-transparent"></div>
                                 <div class="absolute inset-0 bg-holo-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                             <div class="absolute bottom-0 left-0 right-0 p-6">
-                                <h3 class="text-3xl font-bold mb-2 text-holo-secondary">Quantum Jobs</h3>
+                                <h3 class="text-3xl font-bold mb-2 text-holo-secondary">VORTEX Jobs</h3>
                                 <p class="text-white/80">Revolutionary career paths with procedurally generated missions and dynamic skill progression systems.</p>
                             </div>
                         </div>
@@ -374,19 +347,19 @@
                             </div>
                             <div class="absolute bottom-0 left-0 right-0 p-6">
                                 <h3 class="text-3xl font-bold mb-2 text-holo-accent">Holographic Vehicles</h3>
-                                <p class="text-white/80">Next-gen vehicle customization with holographic modifications and quantum-enhanced performance.</p>
+                                <p class="text-white/80">Next-gen vehicle customization with holographic modifications and VORTEX-enhanced performance.</p>
                             </div>
                         </div>
 
                         <!-- Feature 4 -->
                         <div class="holo-feature-card relative group overflow-hidden rounded-xl">
                             <div class="aspect-video relative overflow-hidden">
-                                <img src="https://placehold.co/800x450/0F0F23/10B981?text=NEURAL+EVENTS" alt="Neural Events" class="w-full h-full object-cover">
+                                <img src="https://placehold.co/800x450/0F0F23/10B981?text=VORTEX+EVENTS" alt="VORTEX Events" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-holo-darker via-transparent to-transparent"></div>
                                 <div class="absolute inset-0 bg-holo-success/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                             <div class="absolute bottom-0 left-0 right-0 p-6">
-                                <h3 class="text-3xl font-bold mb-2 text-holo-success">Neural Events</h3>
+                                <h3 class="text-3xl font-bold mb-2 text-holo-success">VORTEX Events</h3>
                                 <p class="text-white/80">AI-orchestrated events that create unique, memorable experiences for the entire server community.</p>
                             </div>
                         </div>
@@ -402,11 +375,11 @@
                     <div class="text-center mb-16">
                         <h2 class="text-5xl md:text-6xl font-black mb-6">
                             <span class="bg-gradient-to-r from-holo-primary to-holo-secondary bg-clip-text text-transparent">
-                                NEURAL COLLECTIVE
+                                VORTEX COLLECTIVE
                             </span>
                         </h2>
                         <p class="text-xl text-white/70 max-w-3xl mx-auto">
-                            Meet the visionaries behind Nexus Server - a team of dedicated professionals committed to pushing the boundaries of virtual reality.
+                            Meet the visionaries behind VorteX Community - a team of dedicated professionals committed to pushing the boundaries of virtual reality.
                         </p>
                     </div>
 
@@ -414,7 +387,7 @@
                     <div class="mb-16">
                         <h3 class="text-3xl font-bold mb-8 text-center flex items-center justify-center">
                             <i class="ri-vip-crown-line mr-3 text-holo-accent"></i>
-                            <span class="text-holo-accent">NEURAL ARCHITECT</span>
+                            <span class="text-holo-accent">VORTEX ARCHITECT</span>
                         </h3>
                         
                         <div class="max-w-lg mx-auto">
@@ -424,12 +397,12 @@
                                     <div class="w-32 h-32 mx-auto mb-6 relative">
                                         <div class="absolute inset-0 bg-gradient-to-br from-holo-accent to-holo-primary rounded-full p-1">
                                             <div class="w-full h-full rounded-full overflow-hidden">
-                                                <img src="https://placehold.co/128x128/0F0F23/F59E0B?text=NA" alt="Neural Architect" class="w-full h-full object-cover">
+                                                <img src="https://placehold.co/128x128/0F0F23/F59E0B?text=NA" alt="VORTEX Architect" class="w-full h-full object-cover">
                                             </div>
                                         </div>
                                         <div class="absolute inset-0 bg-holo-accent/20 rounded-full blur-xl animate-pulse"></div>
                                     </div>
-                                    <h3 class="text-2xl font-bold mb-2 text-holo-accent">Neural Architect</h3>
+                                    <h3 class="text-2xl font-bold mb-2 text-holo-accent">VORTEX Architect</h3>
                                     <p class="text-white/70 mb-6 font-mono">FOUNDER & LEAD DEVELOPER</p>
                                     <div class="flex justify-center space-x-4">
                                         <a href="https://discord.gg/placeholder" target="_blank" class="holo-social-link">
@@ -446,19 +419,19 @@
 
                     <!-- Staff Grid -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Neural Engineer -->
+                        <!-- VORTEX Engineer -->
                         <div class="holo-card p-8 bg-holo-glass backdrop-blur-md border border-holo-border rounded-xl relative group text-center">
                             <div class="absolute inset-0 bg-gradient-to-br from-holo-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
                             <div class="relative z-10">
                                 <div class="w-24 h-24 mx-auto mb-6 relative">
                                     <div class="absolute inset-0 bg-gradient-to-br from-holo-primary to-holo-secondary rounded-full p-1">
                                         <div class="w-full h-full rounded-full overflow-hidden">
-                                            <img src="https://placehold.co/96x96/0F0F23/00D4FF?text=NE" alt="Neural Engineer" class="w-full h-full object-cover">
+                                            <img src="https://placehold.co/96x96/0F0F23/00D4FF?text=NE" alt="VORTEX Engineer" class="w-full h-full object-cover">
                                         </div>
                                     </div>
                                     <div class="absolute inset-0 bg-holo-primary/20 rounded-full blur-lg animate-pulse"></div>
                                 </div>
-                                <h3 class="text-xl font-bold mb-2 text-holo-primary">Neural Engineer</h3>
+                                <h3 class="text-xl font-bold mb-2 text-holo-primary">VORTEX Engineer</h3>
                                 <p class="text-white/70 mb-6 font-mono text-sm">SYSTEM ADMINISTRATOR</p>
                                 <div class="flex justify-center space-x-4">
                                     <a href="https://discord.gg/placeholder" target="_blank" class="holo-social-link">
@@ -471,19 +444,19 @@
                             </div>
                         </div>
 
-                        <!-- Quantum Moderator -->
+                        <!-- VORTEX Moderator -->
                         <div class="holo-card p-8 bg-holo-glass backdrop-blur-md border border-holo-border rounded-xl relative group text-center">
                             <div class="absolute inset-0 bg-gradient-to-br from-holo-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
                             <div class="relative z-10">
                                 <div class="w-24 h-24 mx-auto mb-6 relative">
                                     <div class="absolute inset-0 bg-gradient-to-br from-holo-secondary to-holo-accent rounded-full p-1">
                                         <div class="w-full h-full rounded-full overflow-hidden">
-                                            <img src="https://placehold.co/96x96/0F0F23/7C3AED?text=QM" alt="Quantum Moderator" class="w-full h-full object-cover">
+                                            <img src="https://placehold.co/96x96/0F0F23/7C3AED?text=QM" alt="VORTEX Moderator" class="w-full h-full object-cover">
                                         </div>
                                     </div>
                                     <div class="absolute inset-0 bg-holo-secondary/20 rounded-full blur-lg animate-pulse"></div>
                                 </div>
-                                <h3 class="text-xl font-bold mb-2 text-holo-secondary">Quantum Moderator</h3>
+                                <h3 class="text-xl font-bold mb-2 text-holo-secondary">VORTEX Moderator</h3>
                                 <p class="text-white/70 mb-6 font-mono text-sm">COMMUNITY GUARDIAN</p>
                                 <div class="flex justify-center space-x-4">
                                     <a href="https://discord.gg/placeholder" target="_blank" class="holo-social-link">
@@ -509,7 +482,7 @@
                                     <div class="absolute inset-0 bg-holo-success/20 rounded-full blur-lg animate-pulse"></div>
                                 </div>
                                 <h3 class="text-xl font-bold mb-2 text-holo-success">Support Specialist</h3>
-                                <p class="text-white/70 mb-6 font-mono text-sm">NEURAL SUPPORT</p>
+                                <p class="text-white/70 mb-6 font-mono text-sm">VORTEX SUPPORT</p>
                                 <div class="flex justify-center space-x-4">
                                     <a href="https://discord.gg/placeholder" target="_blank" class="holo-social-link">
                                         <i class="ri-discord-line text-lg"></i>
@@ -532,11 +505,11 @@
                     <div class="text-center mb-16">
                         <h2 class="text-5xl md:text-6xl font-black mb-6">
                             <span class="bg-gradient-to-r from-holo-primary to-holo-secondary bg-clip-text text-transparent">
-                                NEURAL PROTOCOLS
+                                VORTEX PROTOCOLS
                             </span>
                         </h2>
                         <p class="text-xl text-white/70 max-w-3xl mx-auto">
-                            Essential guidelines for maintaining harmony within the Nexus Server neural network.
+                            Essential guidelines for maintaining harmony within the VorteX Community VORTEX network.
                         </p>
                     </div>
 
@@ -554,7 +527,7 @@
                                 <ul class="space-y-4">
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-primary mr-3 group-hover/item:scale-110 transition-transform"></i>
-                                        Respect all neural entities and administrators
+                                        Respect all VORTEX entities and administrators
                                     </li>
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-primary mr-3 group-hover/item:scale-110 transition-transform"></i>
@@ -562,11 +535,11 @@
                                     </li>
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-primary mr-3 group-hover/item:scale-110 transition-transform"></i>
-                                        Maintain neural link integrity at all times
+                                        Maintain VORTEX link integrity at all times
                                     </li>
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-primary mr-3 group-hover/item:scale-110 transition-transform"></i>
-                                        Follow quantum administrator directives
+                                        Follow VORTEX administrator directives
                                     </li>
                                 </ul>
                             </div>
@@ -589,7 +562,7 @@
                                     </li>
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-secondary mr-3 group-hover/item:scale-110 transition-transform"></i>
-                                        No breaking neural immersion protocols
+                                        No breaking VORTEX immersion protocols
                                     </li>
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-secondary mr-3 group-hover/item:scale-110 transition-transform"></i>
@@ -597,7 +570,7 @@
                                     </li>
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-secondary mr-3 group-hover/item:scale-110 transition-transform"></i>
-                                        No quantum manipulation or meta-gaming
+                                        No VORTEX manipulation or meta-gaming
                                     </li>
                                 </ul>
                             </div>
@@ -616,7 +589,7 @@
                                 <ul class="space-y-4">
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-accent mr-3 group-hover/item:scale-110 transition-transform"></i>
-                                        No unauthorized neural access attempts
+                                        No unauthorized VORTEX access attempts
                                     </li>
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-accent mr-3 group-hover/item:scale-110 transition-transform"></i>
@@ -628,7 +601,7 @@
                                     </li>
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-accent mr-3 group-hover/item:scale-110 transition-transform"></i>
-                                        Follow quantum encryption guidelines
+                                        Follow VORTEX encryption guidelines
                                     </li>
                                 </ul>
                             </div>
@@ -647,11 +620,11 @@
                                 <ul class="space-y-4">
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-success mr-3 group-hover/item:scale-110 transition-transform"></i>
-                                        Foster positive neural connections
+                                        Foster positive VORTEX connections
                                     </li>
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-success mr-3 group-hover/item:scale-110 transition-transform"></i>
-                                        Support new neural entities
+                                        Support new VORTEX entities
                                     </li>
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-success mr-3 group-hover/item:scale-110 transition-transform"></i>
@@ -659,7 +632,7 @@
                                     </li>
                                     <li class="flex items-center text-white/80 group/item">
                                         <i class="ri-checkbox-circle-line text-holo-success mr-3 group-hover/item:scale-110 transition-transform"></i>
-                                        Maintain neural network harmony
+                                        Maintain VORTEX network harmony
                                     </li>
                                 </ul>
                             </div>
@@ -670,26 +643,26 @@
         </section>
 
         <!-- Join Section -->
-        <section id="join" class="min-h-screen py-20 relative overflow-hidden">
+        <section id="join" class="min-h-screen py-20 relative overflow-hidden" style="display: none;">
             <!-- Holographic Background Effects -->
             <div class="holo-3d-bg absolute inset-0"></div>
             <div class="floating-particles absolute inset-0"></div>
 
             <div class="container mx-auto px-6 relative z-10">
                 <div class="max-w-6xl mx-auto">
-                    <div class="text-center mb-16">
+                    <div class="text-center mb-16" style="display: none;">
                         <h2 class="text-5xl md:text-6xl font-black mb-6">
                             <span class="bg-gradient-to-r from-holo-primary to-holo-secondary bg-clip-text text-transparent">
-                                NEURAL CONNECTION
+                                VORTEX CONNECTION
                             </span>
                         </h2>
                         <p class="text-xl text-white/70 max-w-3xl mx-auto">
-                            Initialize your neural link and join the most advanced FiveM experience in the quantum realm.
+                            Initialize your VORTEX link and join the most advanced FiveM experience in the VORTEX realm.
                         </p>
                     </div>
 
                     <!-- Server Connection Panel -->
-                    <div class="mb-12">
+                    <div class="mb-12" style="display: none;">
                         <div class="holo-card p-8 bg-holo-glass backdrop-blur-md border border-holo-border rounded-xl relative group max-w-4xl mx-auto">
                             <div class="absolute inset-0 bg-gradient-to-br from-holo-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
                             <div class="relative z-10">
@@ -697,100 +670,42 @@
                                     <div class="w-16 h-16 bg-gradient-to-br from-holo-primary to-holo-secondary rounded-xl flex items-center justify-center mr-4">
                                         <i class="ri-server-line text-2xl text-white"></i>
                                     </div>
-                                    <h3 class="text-3xl font-bold text-holo-primary">NEURAL SERVER ADDRESS</h3>
+                                    <h3 class="text-3xl font-bold text-holo-primary">VORTEX SERVER ADDRESS</h3>
                                 </div>
                                 <div class="flex justify-center">
                                     <div class="holo-terminal p-6 bg-holo-darker/80 border border-holo-primary/30 rounded-lg font-mono text-center relative group">
                                         <div class="absolute inset-0 bg-holo-primary/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"></div>
                                         <div class="relative z-10">
                                             <div class="text-sm text-holo-primary/70 mb-2">CONNECT TO:</div>
-                                            <code class="text-2xl text-holo-primary select-all">nexus.server.ip</code>
-                                            <div class="text-sm text-white/50 mt-2">QUANTUM ENCRYPTION ENABLED</div>
+                                            <code class="text-2xl text-holo-primary select-all">VorteX.server.ip</code>
+                                            <div class="text-sm text-white/50 mt-2">VORTEX ENCRYPTION ENABLED</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Connection Options -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Discord Neural Link -->
-                        <a href="https://discord.gg/placeholder" target="_blank" class="holo-card p-8 bg-holo-glass backdrop-blur-md border border-holo-border rounded-xl relative group hover:scale-105 transition-all">
-                            <div class="absolute inset-0 bg-gradient-to-br from-holo-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
-                            <div class="relative z-10 text-center">
-                                <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-holo-primary to-holo-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <i class="ri-discord-line text-3xl text-white"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold mb-4 text-holo-primary">Discord Neural Link</h3>
-                                <p class="text-white/70 mb-6">Connect to our quantum communication network</p>
-                                <div class="text-holo-primary font-mono text-sm flex items-center justify-center">
-                                    ESTABLISH LINK
-                                    <i class="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform"></i>
-                                </div>
-                            </div>
-                        </a>
-
-                        <!-- Forum Matrix -->
-                        <a href="#" class="holo-card p-8 bg-holo-glass backdrop-blur-md border border-holo-border rounded-xl relative group hover:scale-105 transition-all">
-                            <div class="absolute inset-0 bg-gradient-to-br from-holo-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
-                            <div class="relative z-10 text-center">
-                                <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-holo-secondary to-holo-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <i class="ri-discuss-line text-3xl text-white"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold mb-4 text-holo-secondary">Forum Matrix</h3>
-                                <p class="text-white/70 mb-6">Access the collective knowledge database</p>
-                                <div class="text-holo-secondary font-mono text-sm flex items-center justify-center">
-                                    ACCESS MATRIX
-                                    <i class="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform"></i>
-                                </div>
-                            </div>
-                        </a>
-
-                        <!-- Support Portal -->
-                        <a href="#" class="holo-card p-8 bg-holo-glass backdrop-blur-md border border-holo-border rounded-xl relative group hover:scale-105 transition-all">
-                            <div class="absolute inset-0 bg-gradient-to-br from-holo-success/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
-                            <div class="relative z-10 text-center">
-                                <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-holo-success to-holo-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <i class="ri-customer-service-2-line text-3xl text-white"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold mb-4 text-holo-success">Support Portal</h3>
-                                <p class="text-white/70 mb-6">Neural assistance and troubleshooting</p>
-                                <div class="text-holo-success font-mono text-sm flex items-center justify-center">
-                                    OPEN PORTAL
-                                    <i class="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Neural Status -->
-                    <div class="mt-16 text-center">
-                        <div class="inline-flex items-center space-x-4 px-6 py-3 bg-holo-glass backdrop-blur-md border border-holo-border rounded-full">
-                            <div class="w-3 h-3 bg-holo-success rounded-full animate-pulse"></div>
-                            <span class="text-white/80 font-mono">NEURAL NETWORK STATUS: ONLINE</span>
-                            <div class="w-3 h-3 bg-holo-success rounded-full animate-pulse"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
+                            <!-- VORTEX Status -->
+                    <div class="mt-16 text-center">
+                        <div class="inline-flex items-center space-x-4 px-6 py-3 bg-holo-glass backdrop-blur-md border border-holo-border rounded-full">
+                            <div class="w-3 h-3 bg-holo-success rounded-full animate-pulse"></div>
+                            <span class="text-white/80 font-mono">SERVER STATUS: ONLINE</span>
+                            <div class="w-3 h-3 bg-holo-success rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
     </main>
 
     <!-- Footer -->
     <footer class="py-8 bg-holo-darker border-t border-holo-border relative">
         <div class="container mx-auto px-6 text-center relative z-10">
-            <p class="text-white/60 mb-4">&copy; 2025 Nexus Server. All neural rights reserved.</p>
-            <div class="text-sm">
-                <span class="text-white/40 font-mono">TEMPLATE ARCHITECTED BY</span>
-                <a href="https://fourtwenty.dev" target="_blank" rel="noopener" 
-                   class="inline-flex items-center text-holo-primary hover:text-holo-secondary transition-colors ml-2 group">
-                    FourTwentyDevs
-                    <i class="ri-external-link-line ml-1 text-white/40 group-hover:text-holo-secondary transition-colors"></i>
-                </a>
-            </div>
+            <p class="text-white/60 mb-4">&copy; 2025 VorteX Community. All VORTEX rights reserved.</p>
             <div class="mt-4 text-xs text-white/30 font-mono">
-                NEURAL INTERFACE v4.0 | QUANTUM ENCRYPTION ENABLED
+                VORTEX COMMUNITY 1.0
             </div>
         </div>
     </footer>
