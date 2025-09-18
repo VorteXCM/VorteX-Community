@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Connecting — Nexus</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* مختصر استایل برای صفحه‌ی اتصال */
+    .connect-wrap { min-height:100vh; display:flex; align-items:center; justify-content:center; background:#060616; color:#fff; }
+    .connect-card { width:100%; max-width:900px; padding:2rem; border-radius:14px; background:rgba(10,10,26,0.7); border:1px solid rgba(0,212,255,0.12); }
+    .progress { height:10px; background: rgba(255,255,255,0.04); border-radius:999px; overflow:hidden; margin-top:1rem; }
+    .progress > i { display:block; height:100%; transform:translateX(-100%); width:100%; background:linear-gradient(90deg,#00D4FF,#7C3AED); animation: prog 4.5s linear forwards; }
+    @keyframes prog { 0%{transform:translateX(-100%)} 100%{transform:translateX(0%)} }
+    .small { color:rgba(255,255,255,0.6); font-size:0.95rem }
+  </style>
+</head>
+<body class="bg-holo-darker font-inter">
+  <div class="connect-wrap">
+    <div class="connect-card">
+      <div class="flex items-center gap-4">
+        <div class="w-20 h-20 rounded-lg flex items-center justify-center bg-gradient-to-br from-holo-primary to-holo-secondary">
+          <i class="ri-server-line text-2xl"></i>
+        </div>
+        <div>
+          <h1 class="text-2xl font-bold">Transferring</h1>
+          <div class="small mt-1" id="connecting-sub">Establishing a secure connection</div>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <div class="text-sm small">Moving to details page<span id="countdown">5</span>Seconds ...</div>
+        <div class="progress"><i></i></div>
+      </div>
+
+      <div class="mt-6 text-right">
+        <a id="abortLink" href="index.html" class="holo-button-outline px-4 py-2 rounded">Cancellation and return</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // اگر میخوایم اطلاعات سرور رو پارامتر بدیم، مثال:
+    // connect.html?ip=1.2.3.4&name=Nexus&desc=Best+server&icon=/img/icon.png&banner=/img/banner.jpg
+    const DEFAULT_SERVER = {
+      ip: '100.76.25.95',
+      name: 'VORTEX COMMUNITY',
+      desc: 'NEXT-GENERATION IRFive EXPERIENCE',
+      icon: 'https://uploadkon.ir/uploads/107f18_25myLogo.png',
+      banner: 'https://uploadkon.ir/uploads/404318_25VorteX.gif'
+    };
+
+/*************  ✨ Windsurf Command ⭐  *************/
+/**
+ * Gets the server parameters from the URL query string.
+ * If a parameter is not specified in the query string, it will default to the value in DEFAULT_SERVER.
+ * @returns {Object} Server parameters object with the following properties: ip, name, desc, icon, banner
+ */
+/*******  4087b929-1c43-486e-aaf5-72963ef973e4  *******/
+    function getQuery() {
+      const q = new URLSearchParams(location.search);
+      return {
+        ip: q.get('ip') || DEFAULT_SERVER.ip,
+        name: q.get('name') || DEFAULT_SERVER.name,
+        desc: q.get('desc') || DEFAULT_SERVER.desc,
+        icon: q.get('icon') || DEFAULT_SERVER.icon,
+        banner: q.get('banner') || DEFAULT_SERVER.banner
+      };
+    }
+
+    // شمارش معکوس 5 ثانیه و سپس redirect به server.html با پارامترها
+    let t = 5;
+    const countdownEl = document.getElementById('countdown');
+    const params = getQuery();
+
+    const timer = setInterval(() => {
+      t--;
+      countdownEl.textContent = t;
+      if (t <= 0) {
+        clearInterval(timer);
+        // encode params into URL and redirect
+        const url = new URL(window.location.href);
+        const target = new URL(window.location.origin + /server.html');
+        target.searchParams.set('ip', params.ip);
+        target.searchParams.set('name', params.name);
+        target.searchParams.set('desc', params.desc);
+        target.searchParams.set('icon', params.icon);
+        target.searchParams.set('banner', params.banner);
+        window.location.href = target.toString();
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
