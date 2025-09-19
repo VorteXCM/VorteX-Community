@@ -82,7 +82,7 @@
         clearInterval(timer);
         // encode params into URL and redirect
         const url = new URL(window.location.href);
-        const target = new URL(window.location.origin + '/server.html');
+        const target = new URL(window.location.origin + 'server.html');
         target.searchParams.set('ip', params.ip);
         target.searchParams.set('name', params.name);
         target.searchParams.set('desc', params.desc);
